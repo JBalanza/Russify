@@ -15,6 +15,7 @@ def aes_encrypt(data, key):
 
 
 def aes_decrypt(data, key):
+    data = bytes(data)
     iv = data[:AES.block_size]
     data = data[AES.block_size:]
     cipher = AES.new(key, AES.MODE_CBC, iv)
